@@ -1,0 +1,13 @@
+[Unit]
+Description=Unistellar Proxy Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/unistellar
+Restart=always
+User=alarm
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+
+[Install]
+WantedBy=multi-user.target
